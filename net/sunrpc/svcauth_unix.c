@@ -506,6 +506,7 @@ static int unix_gid_parse(struct cache_detail *cd,
 	int err;
 	time_t expiry;
 	struct unix_gid ug, *ugp;
+	gids=0;
 
 	if (mesg[mlen - 1] != '\n')
 		return -EINVAL;

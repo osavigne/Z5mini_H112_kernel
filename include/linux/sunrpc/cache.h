@@ -252,6 +252,8 @@ static inline time_t get_expiry(char **bpp)
 	int rv;
 	struct timespec boot;
 
+	rv=0;
+
 	if (get_int(bpp, &rv))
 		return 0;
 	if (rv < 0)

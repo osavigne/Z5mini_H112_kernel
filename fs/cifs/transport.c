@@ -571,6 +571,8 @@ SendReceive2(const unsigned int xid, struct cifs_ses *ses,
 	int long_op;
 	struct mid_q_entry *midQ;
 	char *buf = iov[0].iov_base;
+	
+	midQ=NULL;
 
 	long_op = flags & CIFS_TIMEOUT_MASK;
 
@@ -669,6 +671,7 @@ SendReceive2(const unsigned int xid, struct cifs_ses *ses,
 		*pRespBufType = CIFS_LARGE_BUFFER;
 	else
 		*pRespBufType = CIFS_SMALL_BUFFER;
+
 
 	rc = cifs_check_receive(midQ, ses->server, flags & CIFS_LOG_ERROR);
 

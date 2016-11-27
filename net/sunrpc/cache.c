@@ -259,6 +259,8 @@ int cache_check(struct cache_detail *detail,
 	int rv;
 	long refresh_age, age;
 
+	rv=0;
+
 	/* First decide return status as best we can */
 	rv = cache_is_valid(detail, h);
 

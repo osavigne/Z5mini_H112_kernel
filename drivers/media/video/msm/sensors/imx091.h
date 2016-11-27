@@ -51,13 +51,6 @@ static const struct i2c_device_id imx091_i2c_id[] = {
 	{ }
 };
 
-static struct i2c_driver imx091_i2c_driver = {
-	.id_table = imx091_i2c_id,
-	.probe  = msm_sensor_bayer_i2c_probe,
-	.driver = {
-		.name = IMX091_SENSOR_NAME,
-	},
-};
 
 static struct msm_camera_i2c_client imx091_sensor_i2c_client = {
 	.addr_type = MSM_CAMERA_I2C_WORD_ADDR,
